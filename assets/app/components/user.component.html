@@ -1,0 +1,10 @@
+
+    <div>
+        <form onsubmit="" >
+            <label for="name" >Name</label>
+            <input type="text" id="name" [(ngModel)]="model.name" name="name" >
+            <label for="age" >Age</label>
+            <input type="text" id="age"  [(ngModel)]="model.age" name="age">
+            <button type="button" class="btn btn-default" (click)="addNew()">Submit</button>
+        </form>
+    </div>
