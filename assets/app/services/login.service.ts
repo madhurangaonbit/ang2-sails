@@ -15,7 +15,9 @@ export class LoginService{
         return this.http.get('http://localhost:1337/auth/testHttpRequest')
             .map(res=> res.json());
     }
-    sendPostData(){
-        //return this.http.post('')
+    sendPostData(data : any){
+
+        return this.http.post('http://localhost:1337/auth/testHttpRequest',data)
+            .map(res=> res.json());
     }
 }

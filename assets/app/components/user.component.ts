@@ -13,16 +13,19 @@ import {LoginService} from '../services/login.service';
 })
 export class UserComponent {
 
-  model = new User(1, '', '');
+  model = new User('', '');
   frameWork = "Sails";
 
   constructor(private loginService: LoginService){
 
-    this.loginService.getPostData().subscribe(posts=> console.log(posts));
+    this.loginService.getPostData()
+        .subscribe(posts=> console.log(posts));
   }
 
   addNew(){
     console.log(this.model);
+    this.loginService.sendPostData(this.model)
+        .subscribe(posts=> console.log(posts));
   }
 
 

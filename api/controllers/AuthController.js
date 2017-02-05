@@ -9,7 +9,17 @@ module.exports = {
 
     testHttpRequest : function (req,res) {
 
-        console.log("testHttpRequest function initialized");
+        console.log(req.body,"testHttpRequest function initialized");
+        User.create(req.body).exec(function (err, app) {
+            if (err) res.send(err);
+
+            res.send({
+                app: app,
+                message: "New Record Successfully created"
+            });
+        });
+
+
 
 
     }

@@ -3,8 +3,7 @@
  * Created by madhuranga on 2/1/17.
  */
 class User {
-    constructor(id, name, age) {
-        this.id = id;
+    constructor(name, age) {
         this.name = name;
         this.age = age;
     }

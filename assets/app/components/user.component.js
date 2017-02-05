@@ -17,12 +17,15 @@ const login_service_1 = require('../services/login.service');
 let UserComponent = class UserComponent {
     constructor(loginService) {
         this.loginService = loginService;
-        this.model = new user_model_1.User(1, '', '');
+        this.model = new user_model_1.User('', '');
         this.frameWork = "Sails";
-        this.loginService.getPostData().subscribe(posts => console.log(posts));
+        this.loginService.getPostData()
+            .subscribe(posts => console.log(posts));
     }
     addNew() {
         console.log(this.model);
+        this.loginService.sendPostData(this.model)
+            .subscribe(posts => console.log(posts));
     }
 };
 UserComponent = __decorate([
